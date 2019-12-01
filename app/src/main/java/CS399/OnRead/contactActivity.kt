@@ -20,33 +20,16 @@ import android.telephony.SmsManager
 import java.util.ArrayList
 
 import android.Manifest.permission.READ_CONTACTS
-import android.Manifest.permission.SEND_SMS
 
 class contactActivity : AppCompatActivity() {
 
     companion object {
 
         private val REQUEST_READ_CONTACTS = 444
-        private val REQUEST_SMS = 333
+
     }
 
     private var phones: ArrayList<String>? = null
-
-    private fun mayRequestSMS(): Boolean {
-
-        if (checkSelfPermission(SEND_SMS) === PackageManager.PERMISSION_GRANTED) {
-            return true
-        }
-
-
-        if (shouldShowRequestPermissionRationale(SEND_SMS)) {
-            requestPermissions(arrayOf(SEND_SMS), REQUEST_SMS)
-        } else {
-            return false
-        }
-
-        return false
-    }
 
     private fun mayRequestContacts(): Boolean {
 
@@ -150,11 +133,20 @@ class contactActivity : AppCompatActivity() {
             val listView = parent.findViewById(R.id.contacts) as ListView
             val nameValue = listView.getItemAtPosition(position) as String
 
-            //Send the user to Darius's layout file
+            //Send the user to Darius's activity file
             //Do this by creating an instance of his layout and have the name, phone number, and photo as parameters
 
-            //parameters for name, phone number, **need to research how to get the image**
-            (nameValue + ": " + phones!![position]+  image      )
+            val intent: Intent
+
+            //inputActivity is the temporary name for activity file
+            intent = Intent(applicationContext, inputActivity:: class.java)
+            intent.putExtra("Name", nameValue)
+            intent.putExtra("Phone Number", phones!![position])
+
+            //This is where the image will be added. I did some research but I'm still confused on how I would add the image to the intent.
+            intent.putExtra()
+            startActivity(intent)
+
 
 
 
@@ -164,6 +156,7 @@ class contactActivity : AppCompatActivity() {
             return true
         }
     }
+
 
 
 

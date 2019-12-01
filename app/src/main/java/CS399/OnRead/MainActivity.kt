@@ -8,10 +8,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        only changed it to contacts_layout to test. Should typically go to activity_main
-        setContentView(R.layout.contacts_layout)
+        setContentView(R.layout.activity_main)
 
-        val ContactActivity = contactActivity()
-        ContactActivity.loadContacts()
+
     }
 }
