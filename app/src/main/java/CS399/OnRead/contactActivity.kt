@@ -24,6 +24,11 @@ import android.Manifest.permission.SEND_SMS
 
 class contactActivity : AppCompatActivity() {
 
+    companion object {
+
+        private val REQUEST_READ_CONTACTS = 444
+        private val REQUEST_SMS = 333
+    }
 
     private var phones: ArrayList<String>? = null
 
@@ -149,7 +154,7 @@ class contactActivity : AppCompatActivity() {
             //Do this by creating an instance of his layout and have the name, phone number, and photo as parameters
 
             //parameters for name, phone number, **need to research how to get the image**
-            (nameValue + ": " + phones!![position],  image      )
+            (nameValue + ": " + phones!![position]+  image      )
 
 
 
@@ -160,11 +165,7 @@ class contactActivity : AppCompatActivity() {
         }
     }
 
-    companion object {
 
-        private val REQUEST_READ_CONTACTS = 444
-        private val REQUEST_SMS = 333
-    }
 
 
 }
