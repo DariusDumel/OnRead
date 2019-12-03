@@ -1,8 +1,7 @@
-package CS399.OnRead
+package cS399.onRead
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
