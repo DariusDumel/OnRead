@@ -140,7 +140,7 @@ class contactActivity : AppCompatActivity() {
             intent = Intent(applicationContext, inputActivity:: class.java)
             intent.putExtra("Name", nameValue)
             intent.putExtra("Phone Number", phones!![position])
-            
+
             startActivity(intent)
 
 
