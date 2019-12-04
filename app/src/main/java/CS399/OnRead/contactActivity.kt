@@ -1,25 +1,18 @@
 package CS399.OnRead
 
-import android.content.ContentResolver
+import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.database.Cursor
-import android.net.Uri
-import android.os.Build
-import android.provider.ContactsContract
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
-import android.telephony.SmsManager
-
-import java.util.ArrayList
-
-import android.Manifest.permission.READ_CONTACTS
+import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 class contactActivity : AppCompatActivity() {
 
@@ -71,6 +64,11 @@ class contactActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.contacts_layout)
+        loadContacts()
+    }
 
     fun loadContacts() {
         if (!mayRequestContacts()) {
@@ -142,9 +140,7 @@ class contactActivity : AppCompatActivity() {
             intent = Intent(applicationContext, inputActivity:: class.java)
             intent.putExtra("Name", nameValue)
             intent.putExtra("Phone Number", phones!![position])
-
-            //This is where the image will be added. I did some research but I'm still confused on how I would add the image to the intent.
-            intent.putExtra()
+            
             startActivity(intent)
 
 
