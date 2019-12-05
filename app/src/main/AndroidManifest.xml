@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".InputActivity"></activity>
+        <activity android:name=".contactActivity"></activity>
     </application>
 
 </manifest>
