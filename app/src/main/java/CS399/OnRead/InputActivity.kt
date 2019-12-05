@@ -1,5 +1,6 @@
 package CS399.OnRead
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,8 @@ class InputActivity : AppCompatActivity(){
             } else {
                 //run WriteJSON code and then intent to manage bots page
                 Toast.makeText(this, "bot created", Toast.LENGTH_SHORT).show()
+                var homeIntent = Intent(this, MainActivity::class.java) //yasmins activity is named main activity
+                startActivity(homeIntent)
             }
         }
 
