@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7AD81556"
+    android:background="#7AFFFFFF"
     android:orientation="vertical"
     android:padding="36dp">
 
@@ -63,6 +63,7 @@
             android:id="@+id/timeInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Time Limit (in minutes)"
             android:inputType="time" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -78,15 +79,16 @@
             android:id="@+id/messageInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Message sent by onRead bot"
             android:inputType="textMultiLine" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/sumbitBotButton"
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create onRead"
-        android:textColor="#FFFFFF"
+        android:textColor="#009688"
         android:textStyle="bold" />
-    
+
 </LinearLayout>

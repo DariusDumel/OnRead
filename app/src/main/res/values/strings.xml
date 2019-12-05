@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OnRead</string>
+    <string name="title_activity_input1">inputActivity1</string>
 </resources>
